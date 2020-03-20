@@ -19,6 +19,7 @@ class TelegramThinClient(BaseClient):
         try:
             self.storage.open()
             self.storage.auth_key(Auth(self, self.storage.dc_id()).create())
+            Session.notice_displayed = True
             self.session = Session(self, self.storage.dc_id(), self.storage.auth_key())
             self.session.start()
         except (Exception, KeyboardInterrupt):
