@@ -14,4 +14,4 @@ with client:
             if dc.ip_address not in dcs[dc.id]:
                 dcs[dc.id].append(dc.ip_address)
 
-    print(dcs)
+    print(json.dumps(dcs))
